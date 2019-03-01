@@ -1,0 +1,40 @@
+.scala {
+	background: 
+	  linear-gradient(#000, #999)  /*сколько угодно цветов*/
+}
+
+.scala {
+	background: 
+	  linear-gradient(45deg, #000, #999)  /*наклон градиента*/
+}
+
+.scala {
+	background: 
+	  linear-gradient(45deg, #000 70%, #999)  /*задать переходы цвета*/
+}
+
+.scala {
+	background: 
+	  linear-gradient(45deg, #000 70%, #999);  /*задать переходы цвета*/
+	background-size: 200px 200px;	/*задает размеры градиента*/
+}
+
+.scala {
+	background: 
+	  linear-gradient(45deg, #eee 70%, #999),
+	  linear-gradient(45deg, #ddd 70%, #999),
+	  linear-gradient(45deg, #bbb 70%, #999);   /*задать несколько градиентов*/
+}
+
+														радиальный градиент
+
+
+.scala {
+	background: 
+	  radial-gradient(#1f1f1f, #eee);   /*задать градиент элипсом, кругом и т.д.*/
+}
+
+.scala {
+	background: 
+	  radial-gradient(100px at 10px, #1f1f1f, #eee);   /*задание размера и позиционариования градиента*/
+}

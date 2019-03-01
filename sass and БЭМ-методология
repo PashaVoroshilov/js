@@ -1,0 +1,86 @@
+Less, Sass, Stylus
+
+													Переменные
+
+$title-font: normal 24px/1.5 'Open Sans', sans-serif; 
+$color-title: #F44336;
+
+.title {  font: $title-font;  
+	color: $color-title;
+}
+
+
+													Примесь
+@mixin circle($width, $color) {  		//создание примеси, имя примеси
+	width: $width;  
+	height: $width;  
+	-webkit-border-radius: $width/2;  
+	-moz-border-radius: $width/2;  
+	-o-border-radius: $width/2;  
+	-ms-border-radius: $width/2;  
+	border-radius: $width/2;  
+	background-color: $color; 
+}
+.class {  
+	@include circle(20px, rgb(0,0,255)); 		//вызов примеси
+}
+
+@mixin input ($width: 300px) {		//создание параметра
+	display: block; 
+	border: 1px solid black;
+	margin-bottom: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	width: $width;
+}
+
+.input {
+	@include input(100px);		//ввод параметра в скобках 
+}
+
+
+													Условие
+@if $width > 100px {
+	text-align: left;
+} @else {
+	text-align: center;
+}
+
+													Унаследование стилей/ extend
+.input {	
+	display: block; 
+	border: 1px solid black;
+	margin-bottom: 20px;
+	padding: 5px;
+	border-radius: 5px;
+	width: 300px;
+}
+
+.input-short {
+	@extend .input;		//унаследование стилей другого блока
+}
+
+													PlaceHolder
+%clearfix {		// нельзя задавать параметр, он не попадает в исходный css
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+.wrap {
+	@extend %clearfix;	
+}
+
+													Циклы
+@each $social in (fb, vk, tw) {
+	.class_#{$social} {		//интрополяция
+		background: url('/img/#{$social}.png');
+	}
+}
+
+
+
+
+
